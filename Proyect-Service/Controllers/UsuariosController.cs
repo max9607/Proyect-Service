@@ -47,7 +47,7 @@ namespace Proyect_Service.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Id");
+            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Nombre");
             return View();
         }
 
@@ -81,7 +81,7 @@ namespace Proyect_Service.Controllers
             {
                 return NotFound();
             }
-            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Id", usuario.EmpresaId);
+            ViewData["EmpresaId"] = new SelectList(_context.Empresas, "Id", "Nombre", usuario.EmpresaId);
             return View(usuario);
         }
 
